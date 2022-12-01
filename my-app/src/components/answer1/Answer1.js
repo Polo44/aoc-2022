@@ -17,8 +17,6 @@ const Answer1 = ({
         return value ? [...acc.slice(0, acc.length - 1), (parseInt(acc[acc.length - 1]) || 0) + parseInt(value)] : [...acc, 0]
     }, []).sort((a, b) => b - a)
 
-    console.log({ orderedData })
-
     return (
         <div className="App">
             <div>
