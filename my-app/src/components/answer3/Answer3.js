@@ -26,8 +26,6 @@ const Answer3 = ({
             });
     }, [])
 
-    console.log(data)
-
     const result = data.reduce((acc, value) => {
         const partialResult = value.first.find(d => value.second.includes(d))
         return acc + (partialResult === partialResult.toLowerCase() ? partialResult.charCodeAt(0) % 97 : (partialResult.charCodeAt(0) % 65) + 26) + 1
