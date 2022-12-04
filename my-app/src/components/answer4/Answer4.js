@@ -22,16 +22,10 @@ const Answer4 = ({
     }))
 
     const result2 = sum(data.map(v => {
-        // if ((v[0] <= v[2] && v[1] >= v[3]) || (v[0] >= v[2] && v[1] <= v[3])) {
-        //     console.log(v)
-        //     return 1
-        // }
         if ((v[0] >= v[2] && v[0] <= v[3]) || (v[1] >= v[2] && v[1] <= v[3])) {
-            console.log(v)
             return 1
         }
         if ((v[2] >= v[0] && v[2] <= v[1]) || (v[3] >= v[0] && v[3] <= v[1])) {
-            console.log(v)
             return 1
         }
         return 0
