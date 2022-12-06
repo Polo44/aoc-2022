@@ -13,22 +13,15 @@ const Answer6 = () => {
             })
     }, [])
 
-    const find = (nbSlice) => {
-        return data.map((_, i) => {
-            if (i < data.length - nbSlice) {
-                return uniq(data.slice(i, i + nbSlice)).length === nbSlice ? i + nbSlice : null
-            }
-            return null
-        }).filter(d => !!d)
-    }
+    const find = (nbSlice) => data.findIndex((_, i) =>  uniq(data.slice(i, i + nbSlice)).length === nbSlice)
 
     return (
         <div className="App">
             <div>
-                {find(4)[0]}
+                {find(4) + 4}
             </div>
             <div>
-                {find(14)[0]}
+                {find(14) + 14}
             </div>
         </div>
     )
