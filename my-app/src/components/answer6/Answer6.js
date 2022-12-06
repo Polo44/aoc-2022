@@ -1,4 +1,4 @@
-import { compact, uniq } from "lodash";
+import { uniq } from "lodash";
 import React, { useEffect, useState } from "react";
 import raw from './input.txt'
 
