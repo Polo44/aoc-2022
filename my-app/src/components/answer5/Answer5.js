@@ -39,8 +39,6 @@ const Answer5 = ({
         })
     }, [moves])
 
-    console.log({data, moves})
-
     return (
         <div className="App">
             <div>
