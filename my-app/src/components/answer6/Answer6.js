@@ -22,12 +22,6 @@ const Answer6 = () => {
         }).filter(d => !!d)
     }
 
-    console.log({
-        data,
-        test1: find(4),
-        test2: find(14),
-    })
-
     return (
         <div className="App">
             <div>
