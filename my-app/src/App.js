@@ -6,6 +6,7 @@ import Answer3 from './components/answer3/Answer3';
 import Answer4 from './components/answer4/Answer4';
 import Answer5 from './components/answer5/Answer5';
 import Answer6 from './components/answer6/Answer6';
+import Answer8 from './components/answer8/Answer8';
 
 const App = ({
 }) => {
@@ -17,6 +18,7 @@ const App = ({
             <Answer4 />
             <Answer5 />
             <Answer6 />
+            <Answer8 />
         </div>
     )
 }
