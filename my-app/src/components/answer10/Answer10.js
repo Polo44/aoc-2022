@@ -16,26 +16,21 @@ const Answer10 = () => {
     
     const draw = (acc) => {
         const actualPos = acc.picture.replace('\n', '').length % 40
-        const newCarac = actualPos >= acc.cycleCounter - 1 && actualPos <= acc.cycleCounter + 1 ? '#' : '.'
         return {
             ...acc,
-            picture: acc.picture + newCarac + (acc.cycle % 40 === 0 ? '\n' : '')
+            picture: acc.picture + (actualPos >= acc.cycleCounter - 1 && actualPos <= acc.cycleCounter + 1 ? '#' : '.')
         }
     } 
     
-    const checkResult = (acc) => {
-        const newAcc = cycleExtract.includes(acc.cycle) ? { ...acc, count: acc.count + (acc.cycle * acc.cycleCounter)} : acc
-        return draw(newAcc)
+    const checkResult = (acc, value) => {
+        const drawedAcc = { ...draw(acc), cycleCounter: acc.cycleCounter + value, cycle: acc.cycle + 1 }
+        return cycleExtract.includes(drawedAcc.cycle) ? { ...drawedAcc, count: drawedAcc.count + (drawedAcc.cycle * drawedAcc.cycleCounter) } : drawedAcc
     }
-    const noop = (acc) => checkResult({ ...acc, cycle: acc.cycle + 1})
-    const addAcc = (acc, value) => {
-        const newAcc = noop(acc)
-        return checkResult({ ...newAcc, cycle: newAcc.cycle + 1, cycleCounter: newAcc.cycleCounter + value })
-    }
+    const addAcc = (acc, value) => checkResult(checkResult(acc, 0), value)
     
     const result = data.reduce((acc, value) => 
-        value[0] === 'noop' ? noop(acc) : addAcc(acc, parseInt(value[1]))
-    , { count: 0, cycle: 0, cycleCounter: 1, picture : ''})
+        value[0] === 'noop' ? checkResult(acc, 0) : addAcc(acc, parseInt(value[1]))
+    , { count: 0, cycle: 1, cycleCounter: 1, picture : ''})
 
     return (
         <div className="App">
@@ -43,7 +38,7 @@ const Answer10 = () => {
                 {result.count}
             </div>
             <div style={{ whiteSpace: 'pre-line', fontFamily: 'consolas' }} > 
-                {result.picture}
+                {result.picture.split('').map((d, i) => i % 40 === 39 ? d + '\n' : d)}
             </div>
         </div>
     )
