@@ -42,7 +42,7 @@ const Answer10 = () => {
             <div>
                 {result.count}
             </div>
-            <div style={{ whiteSpace: 'pre-line'}}> 
+            <div style={{ whiteSpace: 'pre-line', fontFamily: 'consolas' }} > 
                 {result.picture}
             </div>
         </div>
