@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import raw from './input.txt'
+import { xor } from "lodash";
 
 const Answer12023 = ({
 }) => {
@@ -37,7 +38,7 @@ const Answer12023 = ({
         enin: '9'
     }
 
-    const regex = '[0-9]|one|two|three|four|five|six|seven|eight|nine'
+    const regex = '([0-9]|one|two|three|four|five|six|seven|eight|nine)'
     const reverseRegex = '[0-9]|eno|owt|eerht|ruof|evif|xis|neves|thgie|enin'
 
     const answer1 = data.reduce((acc, line) => {
@@ -52,6 +53,13 @@ const Answer12023 = ({
         return acc + parseInt('' + (numbers[first] || first) + (reverseNumbers[second] || second))
     }, 0)
 
+
+    const regexNew = '(?=([0-9]|one|two|three|four|five|six|seven|eight|nine))'
+    const answer2Better = data.reduce((acc, line) => {
+        const matches = [...line.matchAll(regexNew)]
+        return acc + parseInt('' + (numbers[matches[0][1]] || matches[0][1]) + (numbers[matches[matches.length - 1][1]] || matches[matches.length - 1][1]))
+    }, 0)
+
     return (
         <div className="App">
             <div>
@@ -59,6 +67,9 @@ const Answer12023 = ({
             </div>
             <div>
                 {answer2}
+            </div>
+            <div>
+                {answer2Better}
             </div>
         </div>
     );
