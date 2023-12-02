@@ -24,10 +24,7 @@ const Answer2 = ({
         const [stringId, game] = line.replaceAll('\r', '').split(':')
         const setup = game.replaceAll(';', ',').split(',').reduce((accGame, cubes) => {
             const [value, cube] = cubes.replace(' ', '').split(' ')
-            if (rules[cube] < parseInt(value)) {
-                return true
-            }
-            return accGame
+            return (rules[cube] < parseInt(value))
         }, false)
 
         return setup ? acc : acc + parseInt(stringId.replaceAll('Game ', ''))
