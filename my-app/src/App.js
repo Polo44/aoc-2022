@@ -1,22 +1,24 @@
 import './App.css';
 import React from 'react'
-import Answer1 from './components/answer1/Answer1';
-import Answer2 from './components/answer2/Answer2';
-import Answer3 from './components/answer3/Answer3';
-import Answer4 from './components/answer4/Answer4';
-import Answer5 from './components/answer5/Answer5';
-import Answer6 from './components/answer6/Answer6';
-import Answer8 from './components/answer8/Answer8';
-import Answer10 from './components/answer10/Answer10';
+// import Answer1 from './components/2022/answer1/Answer1';
+// import Answer2 from './components/2022/answer2/Answer2';
+// import Answer3 from './components/2022/answer3/Answer3';
+// import Answer4 from './components/2022/answer4/Answer4';
+// import Answer5 from './components/2022/answer5/Answer5';
+// import Answer6 from './components/2022/answer6/Answer6';
+// import Answer8 from './components/2022/answer8/Answer8';
+// import Answer10 from './components/2022/answer10/Answer10';
 // import Answer11 from './components/answer11/Answer11';
-import Answer12 from './components/answer12/Answer12';
-import Answer12023 from './components/answer1 2023/Answer12023';
+// import Answer12 from './components/2022/answer12/Answer12';
+import Answer1 from './components/2023/answer1/Answer1';
+import Answer2 from './components/2023/answer2/Answer2';
 
 const App = ({
 }) => {
     return (
         <div className="App">
-            <Answer12023 />
+            <Answer1 />
+            <Answer2 />
             {/* <Answer2 />
             <Answer3 />
             <Answer4 />

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import raw from './input.txt'
-import { xor } from "lodash";
 
 const Answer12023 = ({
 }) => {
