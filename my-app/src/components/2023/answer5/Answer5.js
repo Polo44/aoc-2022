@@ -85,8 +85,6 @@ const Answer5 = () => {
 
     const answer2 = orderBy(run2(newValues2?.dataSet), 'start')
 
-    console.log({ answer2 })
-
     return (
         <div className="App">
             Day 5 :
