@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import raw from './input.txt'
-import { max, keys, range } from 'lodash'
+import { range } from 'lodash'
 
 const Answer4 = () => {
     const [data, setData] = useState([])
