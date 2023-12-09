@@ -68,7 +68,6 @@ const Answer5 = () => {
             return { third: { start: endRange + 1, end }, newEnd: { end: newRange - startRange + end } }
         })()
 
-        console.log([first, { ...newStart, ...newEnd }, third], start, end)
         return [first, { ...newStart, ...newEnd }, third].filter(d => !!d )
     }
 
@@ -78,7 +77,6 @@ const Answer5 = () => {
         } else if (line.includes('to')) {
             return acc
         }
-        console.log({ acc, line })
 
         return acc.flatMap(value => getNewValue2(line.split(' ').map(d => parseInt(d)), value))
     }, setOfValues)
