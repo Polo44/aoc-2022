@@ -12,6 +12,7 @@ import Answer9 from './components/2023/answer9/Answer9';
 import Answer10 from './components/2023/answer10/Answer10';
 import Answer11 from './components/2023/answer11/Answer11';
 import Answer12 from './components/2023/answer12/Answer12';
+import Answer13 from './components/2023/answer13/Answer13';
 
 const App = () => {
     return (
@@ -26,8 +27,9 @@ const App = () => {
             <Answer8 />
             <Answer9 />
             <Answer10 />
-            <Answer11 />*/}
-            <Answer12 />
+            <Answer11 />
+            <Answer12 />*/}
+            <Answer13 />
         </div>
     )
 }
