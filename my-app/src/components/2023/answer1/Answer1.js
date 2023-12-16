@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import raw from './input.txt'
+import DayDisplay from "../../DayDisplay";
 
-const Answer12023 = ({
+const Answer1 = ({
 }) => {
     const [data, setData] = useState([])
+    const [result1, setResult1] = useState(0)
+    const [result2, setResult2] = useState(0)
 
     useEffect(() => {
         fetch(raw)
             .then(r => r.text())
             .then(text => {
-                setData(text.split('\n'))
+                setData(text.replaceAll('\r', '').split('\n'))
             });
     }, [])
 
@@ -33,16 +36,17 @@ const Answer12023 = ({
     }
 
     return (
-        <div className="App">
-            Day 1 :
-            <div>
-                {answer('(?=([0-9]))')}
-            </div>
-            <div>
-                {answer('(?=([0-9]|one|two|three|four|five|six|seven|eight|nine))')}
-            </div>
-        </div>
-    );
+        <DayDisplay
+            day={1}
+            result1={result1}
+            result2={result2}
+            getResults={(cbTime) => {
+                setResult1(answer('(?=(\\d))'))
+                setResult2(answer('(?=(\\d|one|two|three|four|five|six|seven|eight|nine))'))
+                cbTime()
+            }}
+        />
+    )
 }
 
-export default Answer12023;
+export default Answer1

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import raw from './input.txt'
 import { range, zip } from 'lodash'
+import { checkLinesDiff, transpose } from '../../utils'
 
 const Answer13 = () => {
     const [data, setData] = useState([])
@@ -13,10 +14,6 @@ const Answer13 = () => {
             })
     }, [])
 
-    const checkLinesDiff = (line, lineToCompare) => {
-        return line.split('').reduce((acc, col, c) => col !== lineToCompare.split('')[c] ? [...acc, c] : acc, [])
-    }
-
     const findMirrorValue = (scheme, nbError) => {
         const errors = scheme.flatMap((line, index) => {
             const nbErrors = range(0, line.length).reduce((acc, val) => {
@@ -27,10 +24,6 @@ const Answer13 = () => {
         })
 
         return errors.filter(d => d.nbErrors === nbError && d.index !== scheme.length)?.[0]?.index|| 0
-    }
-
-    const transpose = (matrix) => {
-        return zip(...matrix)
     }
 
     const getResult = (nbError) => data.reduce((acc, scheme) => {
