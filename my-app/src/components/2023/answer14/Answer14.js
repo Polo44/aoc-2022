@@ -22,10 +22,10 @@ const Answer14 = ({
         return sum(AllRocks.map(line => sumBy(line.rocks, nr => lLength - nr.c)))
     }
 
-    const getGroundValue = (ground) => {
+    const getGroundValue2 = (ground) => {
         return ground.reduce((acc, line, l) => {
             return acc + line.reduce((accC, col, c) => {
-                return accC +
+                return accC + 0 // todo
             }, 0)
         }, 0)
     }
