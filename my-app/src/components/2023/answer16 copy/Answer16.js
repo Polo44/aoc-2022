@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import raw from './input.txt'
-import DayDisplay from "../../DayDisplay";
+import DayDisplay from "../answer17/DayDisplay";
 import { keys, max, range, sum, sumBy, uniqBy } from "lodash";
 import { transpose } from "../../utils";
 

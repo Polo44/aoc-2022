@@ -37,7 +37,7 @@ const Answer15 = ({
         setResult1(res1)
 
         const res2 = data.reduce((acc, element) => {
-            const { [1]: hash, [2]: condition, [3]: value } = { ...element.match('(.*)([=|-])(\\d)?') }
+            const { 1: hash, 2: condition, 3: value } = { ...element.match('(.*)([=|-])(\\d)?') }
             const box = getHash(hash)
             if (condition === '=') {
                 return { ...acc, [box]: insertInBox(acc[box] || [], hash, value)}
