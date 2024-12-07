@@ -19,14 +19,12 @@ const Answer7 = () => {
             })
     }, [])
 
-    const tries = (line, key, limit, depth, res, part2) => {
-        if (res < key && depth < limit) {
-            return tries(line, key, limit, depth + 1, res + line[depth], part2)
+    const tries = (line, key, limit, depth, res, part2) =>
+        (depth < limit) ?
+             tries(line, key, limit, depth + 1, res + line[depth], part2)
                 || tries(line, key, limit, depth + 1, res * line[depth], part2)
                 || (part2 && tries(line, key, limit, depth + 1, parseInt('' + res + line[depth]), part2))
-        }
-        return res === key
-    }
+            : res === key
 
     const calculate = () => {
         const res = keys(data).reduce((acc, key) => tries(data[key], parseInt(key), data[key].length, 1, data[key][0]) ? acc + parseInt(key) : acc, 0)
