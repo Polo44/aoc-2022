@@ -5,6 +5,7 @@ import { Grid } from '@mui/material';
 import Answer2 from './components/2024/answer2/Answer2';
 import Answer3 from './components/2024/answer3/Answer3';
 import Answer4 from './components/2024/answer4/Answer4';
+import Answer5 from './components/2024/answer5/Answer5';
 
 const App = () => {
     return (
@@ -16,6 +17,7 @@ const App = () => {
             <Answer2 />
             <Answer3 />
             <Answer4 />
+            <Answer5 />
         </Grid>
     )
 }
