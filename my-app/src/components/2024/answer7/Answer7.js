@@ -21,7 +21,7 @@ const Answer7 = () => {
 
     const tries = (line, key, limit, depth, res, part2) =>
         (depth < limit) ?
-             tries(line, key, limit, depth + 1, res + line[depth], part2)
+            tries(line, key, limit, depth + 1, res + line[depth], part2)
                 || tries(line, key, limit, depth + 1, res * line[depth], part2)
                 || (part2 && tries(line, key, limit, depth + 1, parseInt('' + res + line[depth]), part2))
             : res === key
